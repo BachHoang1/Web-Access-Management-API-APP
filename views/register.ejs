@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/stylee.css' />
+  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="stylee.css">
+        <!-- <script defer src="signup-login.js"></script> -->
+
+    </head>
+    <body>
+        <main id="main-box">
+            <h1 id="login-header">Sign Up</h1>
+    
+            <form id="signup-form" action="/users/add" method="POST">
+                <!-- <input type="text" name="userName" id="fn-field" class="fn-form-field" placeholder="First Name">  
+                <input type="text" name="lastname" id="ln-field" class="ln-form-field" placeholder="Last Name"> -->
+                <input type="text" name="userName" id="username-field" class="username-form-field" placeholder="Username">
+                <input type="password" name="password" id="password-field" class="password-form-field" placeholder="Password">
+                <select name="role">
+                    <option value="admin">admin</option>
+                    <option value="finance">finance</option>
+                    <option value="tech">tech</option>
+                    <option value="hr">hr</option>
+                    <option value="sales">sales</option>
+                </select>
+                <!-- <input type="text" name="email" id="email-field" class="email-form-field" placeholder="Email"> -->
+                
+                <input type="submit" value="Sign Up" id="signup-form-button">
+            </form>
+  
+        </main>
+    </body>
+
+</html>

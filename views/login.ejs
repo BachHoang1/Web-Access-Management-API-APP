@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+  </head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+
+  <body>
+  <main id="main-box">
+    <h1 id="login-header">Login</h1>
+    
+    <div id="login-error-msg-box">
+      <p id="login-error-msg" style="color:red;font-size:20px;">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+      <p id="login-error-msg-1" class="hidden"  style="color:red;font-size:20px;">Logout successfully<span id="error-msg-second-line"></span></p>
+    </div>
+    
+      
+    <form id="login-form"  action="/users/login" method="POST">
+      <input type="text" id="userName" name="userName" placeholder="UserID" required />
+      <input type="password" id="userPassword" name="userPassword" placeholder="Password" required />
+      <input type="submit" value="Login" id="login-form-button"/>
+    </form>
+  </main>
+
+  <script >
+    $(document).ready(function(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const loginForm = document.getElementById("login-form");
+    const loginButton = document.getElementById("login-form-submit");
+    const loginErrorMsg = document.getElementById("login-error-msg");
+    const logout = document.getElementById("login-error-msg-1");
+    
+    if (urlParams.has('credential')){
+        // document.getElementById("login-error-msg-box").classList.remove("hidden");
+        loginErrorMsg.style.opacity = 1;
+      }
+    if (urlParams.has('logout')){
+        // document.getElementById("login-error-msg-box").classList.remove("hidden");
+        logout.style.opacity = 1;
+        logout.classList.remove("hidden");
+      }
+      
+    })
+  </script>
+</body>
+</html>
