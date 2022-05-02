@@ -1,2 +1,1 @@
-# COSC4351
-# bHoang_vHong_hLuong
+# WEB Manamgent API APP
